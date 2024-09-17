@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Abdul Rahim" description="This Project developed for Managing expense data of Daily,Weekly,Monthly Basis">
+    <title>Expense Tracker</title>
+    <link rel="icon" href="assets/spending.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="header">        
+        <nav>
+            <h3>Expense Tracker</h3>
+            <ul>
+                <li><button onclick="showCommonPopUp()">LOGIN</button> </li>
+                <li><button class="hide">LOGOUT</button> </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="mainboard">
+            <div class="dashboardcontent" id="dashboardcontentid">
+                <h3>Manage your life expenses daily</h3>
+                <ul>
+                    <li>Tracking Income and Expenses</li>
+                    <li>Budgeting and Planning</li>
+                    <li>Expense Reporting</li>
+                    <li>Better Spending Awareness</li>
+                    <li>Analysis Costs Regularly</li>
+                </ul>    
+            </div>
+            <div class="inputs" id="commonIframe">
+                <button class="closebtn" onclick="closeCommonPopUp()">X</button>
+                <iframe src="PopUp/common.html" frameborder="0"></iframe>
+            </div>
+            <div>
+                <img class="dashboardimg" id="dashboardimgid" src="assets/dashboardimg.jpg" alt="Expense Tracker" width="500px">
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <h5>website under construction</h5>
+    </footer>
+</body>
+</html>

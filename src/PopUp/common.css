@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    height:35px;
+}
+.form-row{
+    margin-top: 10px;
+}
+.buttons{
+    padding: 8px;
+    width:70px;
+}
+
+.forgotbtn{
+    margin-top: 5px;
+    color:red;
+    border: none;
+    background-color: transparent;
+}
+
+.btndiv{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    align-items: center;
+    place-content: center;
+}
+
+.Logo{
+    margin-left: 20px;
+    place-content: center;
+}
