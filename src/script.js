@@ -12,6 +12,12 @@ function showCommonPopUp(){
     }
 }
 
+function logOut(){
+    localStorage.setItem('loggedUser',"")
+    document.getElementById('loginId').style.display='block';
+    document.getElementById('logoutId').style.display='none';
+}
+
 function closeCommonPopUp(){
     document.getElementById('commonIframe').style.display='none';
     document.getElementById('dashboardcontentid').style.display='block';
@@ -22,3 +28,15 @@ function closeCommonPopUp(){
 function isMobileScreen(){
     return window.innerWidth<=768;
 }
+
+window.addEventListener('message', (event) => {
+    if (event.data === 'loginSuccess') {
+        let loggedUser  = localStorage.getItem('loggedUser') ? localStorage.getItem('loggedUser'): "";
+        if(loggedUser != ""){
+            closeCommonPopUp()
+            document.getElementById('loginId').style.display='none';
+            document.getElementById('logoutId').style.display='block';
+            alert(`Hello ${loggedUser}`)
+        }
+    }
+});

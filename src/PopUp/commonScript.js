@@ -56,6 +56,34 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('signupForm').reset();
         openSignIn();
     });
+
+    document.getElementById('signinForm').addEventListener('submit',function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData.entries());
+        let StoredData  = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')): [];
+        
+        if(StoredData.length <= 0){
+            alert("Invalid Username or Password");
+            return
+        }else{
+            let checkUser = StoredData.filter(x=> x.newusername === data.username)
+            if(checkUser.length <= 0){
+                alert("Invalid Username");
+                return        
+            }else{
+                let checkPass = StoredData.filter(x=> x.newpassword.toString().toLowerCase() === data.password.toString().toLowerCase() && x.newusername === data.username)
+                if(checkPass.length <= 0){
+                    alert("Invalid Password");
+                    return
+                }
+            }
+        }
+        localStorage.setItem('loggedUser',data.username);   
+        document.getElementById('signinForm').reset();
+        parent.postMessage('loginSuccess', '*');
+    });
 });
 
 
