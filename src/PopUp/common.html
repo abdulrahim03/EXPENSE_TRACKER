@@ -5,29 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PopUp</title>
     <link rel="stylesheet" href="common.css" x-type="text/css">
+    <script src="commonScript.js"></script>
 </head>
 <body>
    <main>
-        <form action="" method="POST"> 
-            <div class="Logo">
-                <img src="../assets/LoginLogo.png" alt="Login" width="120" height="120">
-            </div>
-            <div class="form-row">
-                <label class="label" for="username">User Name</label>
-                <input class="inputs" type="text" placeholder="UserName"name="username" id="username">
-            </div>
-            <div class="form-row">
-                <label class="label" for="password">Password</label>
-                <input class="inputs" type="password" placeholder="Password" name="password" id="password">
-            </div>
-            <div>
-                <button class="forgotbtn">Forgot?</button>
-            </div>
-            <div class="btndiv">
-                <button class="buttons" type="submit">LogIn</button>
-                <button class="buttons" type="submit">SignIn</button>
-            </div>
-        </form>
+       <div id="signinSection">
+            <form id="signinForm"> 
+                <div class="Logo">
+                    <img src="../assets/LoginLogo.png" alt="Login" width="120" height="120">
+                </div>
+                <div class="form-row">
+                    <label class="label" for="username">User Name</label>
+                    <input class="inputs" type="text" placeholder="UserName"name="username" id="username" required="true" pattern="[A-Za-z0-9]+">
+                </div>
+                <div class="form-row">
+                    <label class="label" for="password">Password</label>
+                    <input class="inputs" type="password" placeholder="Password" name="password" id="password" required="true">
+                </div>
+                <div>
+                    <button class="forgotbtn">Forgot?</button>
+                </div>
+                <div class="btndiv">
+                    <button class="buttons" type="submit">LogIn</button>
+                    <button class="buttons" type="button" onclick="openSignUp()">SignUp</button>
+                </div>
+            </form>
+        </div>
+        <div id="signupSection" class="hidden">
+            <form id="signupForm">
+                <div class="Logo">
+                    <img src="../assets/LoginLogo.png" alt="Login" width="120" height="120">
+                </div>
+                <div class="form-row">
+                    <label class="label" for="email">Email</label>
+                    <input class="inputs" type="text" placeholder="Email" name="email" id="email" required="true" pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/">
+                    <span id="emailerror" class="errormsg"></span>
+                </div>
+                <div class="form-row">
+                    <label class="label" for="newusername">User Name</label>
+                    <input class="inputs" type="text" placeholder="UserName"name="newusername" id="newusername" required="true" pattern="[A-Za-z0-9]+">
+                    <span id="usererror" class="errormsg"></span>
+                </div>
+                <div class="form-row">
+                    <label class="label" for="newpassword">Password</label>
+                    <input class="inputs" type="password" placeholder="Password" name="newpassword" id="newpassword" required="true">
+                </div>
+                <div class="btndiv">
+                    <button class="buttons" type="submit">SignUp</button>
+                    <button class="buttons" type="button" onclick="openSignIn()">Back</button>
+                </div>
+            </form>
+        </div>
    </main>
 </body>
 </html>

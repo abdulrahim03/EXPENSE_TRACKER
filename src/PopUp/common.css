@@ -57,6 +57,15 @@ body{
 }
 
 .Logo{
-    margin-left: 20px;
+    margin-left: 25px;
     place-content: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.errormsg{
+    color:red;
+    font-size: 10px;
 }
