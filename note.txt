@@ -1,7 +1,9 @@
-Main Screen - LogIn,LogOut,content,Image - Completed
-Login - Page Design - Completed
-SignIn - In Login Page - SignIn Options - Completed
-SignIn Data - Save the Data to LocalStorage - Completed
-Login - Verify with LocalStorage and Allow Access
-LogOut - Back to Main Screen and Update the Status in File
-
+Main Screen - LogIn,LogOut,content,Image                    - Completed
+Login - Page Design                                         - Completed
+SignIn - In Login Page - SignIn Options                     - Completed
+SignIn Data - Save the Data to LocalStorage                 - Completed
+Login - Verify with LocalStorage and Allow Access           - Completed
+LogOut - Back to Main Screen and Update the Status in File  - Completed
+Password - Set Encrypt Decrypt                              - Completed
+New Entry Page Design for Adding the Expense                - WIP
+New Details Page Design for View the Expense                - Pending

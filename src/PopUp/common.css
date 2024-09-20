@@ -22,7 +22,8 @@ body{
 
 .label{
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(5, 66, 37);
 }
 
 .form-row{
@@ -36,6 +37,7 @@ body{
 .buttons{
     padding: 8px;
     width:70px;
+    color:rgb(5, 66, 37);
 }
 
 .forgotbtn{

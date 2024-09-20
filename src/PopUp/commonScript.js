@@ -1,4 +1,5 @@
 function openSignUp(){
+    document.getElementById('signupForm').reset();
     let signInSection = document.getElementById('signinSection');
     let signUpSection = document.getElementById('signupSection');
 
@@ -7,6 +8,7 @@ function openSignUp(){
 }
 
 function openSignIn(){
+    document.getElementById('signinForm').reset();
     let signInSection = document.getElementById('signinSection');
     let signUpSection = document.getElementById('signupSection');
 
@@ -50,6 +52,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }else{
             document.getElementById('usererror').innerHTML=""  
         }
+        if(data.newpassword != ""){
+            let hashvalue =[];
+            for(let i=0;i<data.newpassword.length;i++){
+                let asciivalue = data.newpassword.charAt(i).charCodeAt(0);
+                let ascii = asciivalue * 9;
+                hashvalue.push(String.fromCharCode(ascii)); 
+            }
+            data.newpassword = hashvalue.toString();
+        }
 
         StoredData.push(data);
         localStorage.setItem('userData',JSON.stringify(StoredData));
@@ -72,9 +83,18 @@ document.addEventListener('DOMContentLoaded', function() {
             if(checkUser.length <= 0){
                 alert("Invalid Username");
                 return        
-            }else{
-                let checkPass = StoredData.filter(x=> x.newpassword.toString().toLowerCase() === data.password.toString().toLowerCase() && x.newusername === data.username)
-                if(checkPass.length <= 0){
+            }else{ 
+                if(checkUser[0].newpassword != ""){
+                    let hashvalue =[];
+                    for(let i=0;i<checkUser[0].newpassword.length;i++){
+                        let asciivalue = checkUser[0].newpassword.charAt(i).charCodeAt(0);
+                        let ascii = asciivalue / 9;
+                        hashvalue.push(String.fromCharCode(ascii)); 
+                    }
+                    checkUser[0].newpassword = hashvalue.toString();
+                }
+                                
+                if(checkUser[0].newpassword.toString().toLowerCase()!=data.password.toString().toLowerCase()){
                     alert("Invalid Password");
                     return
                 }

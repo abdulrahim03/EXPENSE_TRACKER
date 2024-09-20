@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:rgb(19, 165, 98);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;    
+    place-content: center;
+    justify-content: space-evenly;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    gap:220px;
+}
+
+nav h3{
+    font-size: 18px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    animation-name: headeranimate;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    position: relative;
+    top:-100px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 2px black;
+    margin-left: 220px;
+}
+
+@keyframes headeranimate{
+    0%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(100px);
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin:0;
+    padding:0;
+}
+
+nav button{
+    color: yellow;
+    display: block;
+    padding: 5px;
+    background-color: rgb(19, 165, 98);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    text-shadow: 0px 1px 2px black;
+    border: none;
+    cursor: pointer;
+}
+
+.mainboard{
+    width:1200px;
+    height:450px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer{
+    position: sticky;
+    bottom: 0;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: rgb(85, 84, 84);
+}
+
+
+@keyframes listanimate{
+    100%{
+        transform: translateY(20px);
+    }
+}
+
+@media only screen and (max-width:600px) {
+    nav{
+        gap:20px;
+    }
+    
+    nav h3{
+        top:-150px;
+        font-size: 25px;
+        color: red;
+        white-space: nowrap;
+        margin-left: 10px;
+    }
+
+    @keyframes headeranimate{
+        0%{
+            transform: translateY(5px);
+        }
+        100%{
+            transform: translateY(150px);
+        }
+    }
+  
+    .mainboard{
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer h5{
+        position: fixed;
+        color: yellowgreen;
+        text-align: center;
+        margin: 30px -85px;
+    }
+}
