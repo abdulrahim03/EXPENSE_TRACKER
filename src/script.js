@@ -36,7 +36,8 @@ window.addEventListener('message', (event) => {
             closeCommonPopUp()
             document.getElementById('loginId').style.display='none';
             document.getElementById('logoutId').style.display='block';
-            alert(`Hello ${loggedUser}`)
+            window.location.href="./src/Expense/add-expense.html"
+            alert(`Welcome ${loggedUser}!`)
         }
     }
 });

@@ -14,14 +14,51 @@
         <nav>
             <h3>Expense Tracker</h3>
             <ul>
-                <li><button id="loginId" onclick="showCommonPopUp()">LOGIN</button> </li>
-                <li><button class="hide" id="logoutId" onclick="logOut()">LOGOUT</button> </li>
+                <li><button id="logoutId" onclick="logOut()">LOGOUT</button> </li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="mainboard">
-            
+            <div class="expense" id="expenseid">
+                <h3>ADD YOUR EXPENSES</h3>
+                <div class="expenseinputs">
+                    <form id="expenseSection"> 
+                        <div class="form-row">
+                            <label class="label" for="category">Category</label>
+                            <select class="inputht" name="category" id="category" required="true">
+                                <option value="food">Food</option>
+                                <option value="rent">Rent</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label class="label" for="description">Description</label>
+                            <input class="inputs descrip" type="text" placeholder="Enter here" name="description" id="description" required="true">
+                        </div>
+                        <div class="form-row">
+                            <label class="label" for="amount">Amount</label>
+                            <input class="inputs inputht" type="text" placeholder="Enter the Amount" name="amount" id="amount" required="true">
+                        </div>
+                        <div class="form-row">
+                            <div>
+                                <label class="label" for="income">Income</label>
+                                <input class="" type="radio" name="income" id="income" value="income">   
+                                
+                                <label class="label" for="expense">Expense</label>
+                                <input class="" type="radio" name="expense" id="expense" value="expense">  
+                            </div>
+                        </div>
+                        <div class="btndiv">
+                            <button class="buttons" type="submit">Add</button>
+                            <button class="buttons" type="button" onclick="openSignUp()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <img class="dashboardimg" id="dashboardimgid" src="../assets/dashboardimg.jpg" alt="Expense Tracker" width="500px">
+            </div>
         </div>
     </main>
     <footer class="footer">

@@ -85,11 +85,69 @@ nav button{
     color: rgb(85, 84, 84);
 }
 
+.expense{
+    background-color:rgb(19, 165, 98);
+    width:700px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    position: relative;
+}
 
-@keyframes listanimate{
-    100%{
-        transform: translateY(20px);
-    }
+.expense h3{
+    color:white;
+    font-size: 20px;
+    font-style: italic;
+    font-family:'Calibri';
+}
+
+.dashboardimg{
+    height:450px;
+}
+
+.inputs{
+    height:20px;
+    border-radius: 5px;
+    border: 1px solid green;
+    padding:5px;
+}
+
+.label{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color:white;
+}
+
+.form-row{
+    margin-top: 8px;
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+
+.buttons{
+    padding: 4px;
+    width:70px;
+    color:rgb(5, 66, 37);
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.descrip{
+    height:50px;
+}
+.inputht{
+    height:25px;
+}
+
+
+.expenseinputs{
+    padding: 40px;
+    border: 1px solid black;
+    width:400px;
+    height:500px;
 }
 
 @media only screen and (max-width:600px) {
@@ -122,10 +180,41 @@ nav button{
         align-items: center;
     }
 
+    .expense{
+        font-size: 10px;
+        width:400px;
+        margin-left: 70px;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        position: relative;
+    }
+
+    .expense h3{
+        font-size: 16px;
+        font-style: italic;
+    }
+
     .footer h5{
         position: fixed;
         color: yellowgreen;
         text-align: center;
         margin: 30px -85px;
+    }
+
+    body{
+        position: fixed;
+        width:100vw;
+    }
+
+    .dashboardimg{
+        display: none;
+    }
+    
+    .expenseinputs{
+        padding: 40px;
+        border: 1px solid black;
+        width:320px;
+        height:400px;
     }
 }
