@@ -34,26 +34,61 @@
                         </div>
                         <div class="form-row">
                             <label class="label" for="description">Description</label>
-                            <input class="inputs descrip" type="text" placeholder="Enter here" name="description" id="description" required="true">
+                            <input class="inputs descrip" type="text" placeholder="Enter here" name="description" id="description" required="true" maxlength="100">
                         </div>
                         <div class="form-row">
                             <label class="label" for="amount">Amount</label>
-                            <input class="inputs inputht" type="text" placeholder="Enter the Amount" name="amount" id="amount" required="true">
+                            <input class="inputs inputht" type="text" placeholder="Enter the Amount" name="amount" id="amount" required="true" maxlength="10">
                         </div>
                         <div class="form-row">
                             <div>
                                 <label class="label" for="income">Income</label>
-                                <input class="" type="radio" name="income" id="income" value="income">   
+                                <input type="radio" name="income" onclick="radioclick('income')" id="income" value="income">   
                                 
                                 <label class="label" for="expense">Expense</label>
-                                <input class="" type="radio" name="expense" id="expense" value="expense">  
+                                <input type="radio" name="expense" onclick="radioclick('expense')" id="expense" value="expense">  
                             </div>
                         </div>
                         <div class="btndiv">
                             <button class="buttons" type="submit">Add</button>
-                            <button class="buttons" type="button" onclick="openSignUp()">Cancel</button>
+                            <button class="buttons" type="button" onclick="cancel()">Cancel</button>
+                            <button class="buttons expensebtn" onclick="Showexpenses()" type="button">Show Expenses</button>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="expensedetails hidden"  id="expensedetails">
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>ExpenseType</th>
+                        </tr>
+                    </thead>
+                   <tbody id="table-body">
+
+                   </tbody>
+                </table>
+
+                <div class="details">
+                    <div class="income1">
+                        <p>Income</p>
+                        <h1 id="incomevalue"></h1>
+                    </div>
+                    <div class="expense1">
+                        <p>Expense</p>
+                        <h1 id="expensevalue"></h1>
+                    </div>
+                    <div class="balance1">
+                        <p>Balance</p>
+                        <h1 id="balancevalue"></h1>
+                    </div>
+                </div>
+
+                <div class="btndiv">
+                    <button class="buttons" onclick="BacktoInput()" type="button">Back to Entry</button>
                 </div>
             </div>
             <div>

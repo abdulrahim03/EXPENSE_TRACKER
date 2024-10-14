@@ -94,6 +94,15 @@ nav button{
     gap:30px;
     position: relative;
 }
+.expensedetails{
+    background-color:azure;
+    width:700px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    position: relative;
+}
 
 .expense h3{
     color:white;
@@ -129,10 +138,19 @@ nav button{
 
 .buttons{
     padding: 4px;
-    width:70px;
+    width:100px;
     color:rgb(5, 66, 37);
     cursor: pointer;
     margin-top: 5px;
+}
+.expensebtn{
+    width:100%;
+}
+
+.btndiv{
+    align-items: center;
+    place-content: center;
+    display: flex;
 }
 
 .descrip{
@@ -148,6 +166,59 @@ nav button{
     border: 1px solid black;
     width:400px;
     height:500px;
+}
+
+table,th,tr,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+th,tr,td{
+    color:black;
+}
+
+.hidden{
+    display: none;
+}
+
+.details{
+    border: 1px solid black;
+    width: 100%;
+    height:100px;
+    padding: 10px;
+    align-items: center;
+    place-content: center;
+    display: flex;
+    gap:10px;
+}
+
+.income1{
+    background-color:lightgreen;
+    width:200px;
+    height:100px;
+    align-items: center;
+    place-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.expense1{
+    background-color:lightcoral;
+    width:200px;    
+    height:100px;
+    align-items: center;
+    place-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.balance1{
+    background-color:lightskyblue;
+    width:200px;
+    height:100px;
+    align-items: center;
+    place-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 @media only screen and (max-width:600px) {
@@ -190,6 +261,16 @@ nav button{
         position: relative;
     }
 
+    .expensedetails{
+        font-size: 10px;
+        width:400px;
+        margin-left: 5px;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        position: relative;
+    }
+
     .expense h3{
         font-size: 16px;
         font-style: italic;
@@ -216,5 +297,9 @@ nav button{
         border: 1px solid black;
         width:320px;
         height:400px;
+    }
+
+    .hidden{
+        display: none;
     }
 }
