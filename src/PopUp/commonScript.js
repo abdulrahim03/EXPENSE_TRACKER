@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData.entries());
-        let StoredData  = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')): [];
+        let StoredData  = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')): []; 
         
         if(StoredData.length <= 0){
             alert("Invalid Username or Password");
@@ -86,12 +86,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }else{ 
                 if(checkUser[0].newpassword != ""){
                     let hashvalue =[];
-                    for(let i=0;i<checkUser[0].newpassword.length;i++){
-                        let asciivalue = checkUser[0].newpassword.charAt(i).charCodeAt(0);
-                        let ascii = asciivalue / 9;
+                    for(let i=0;i<data.password.length;i++){
+                        let asciivalue = data.password.charAt(i).charCodeAt(0);
+                        let ascii = asciivalue * 9;
                         hashvalue.push(String.fromCharCode(ascii)); 
                     }
-                    checkUser[0].newpassword = hashvalue.toString();
+                    data.password = hashvalue.toString();
                 }
                                 
                 if(checkUser[0].newpassword.toString().toLowerCase()!=data.password.toString().toLowerCase()){
